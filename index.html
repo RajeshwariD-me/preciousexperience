@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Embodiment, Experience, and Transformation</title>
+  <style>
+    /* Overall Page Styles */
+    body {
+      font-family: Helvetica, sans-serif;
+      background-color: #fdf8f2; /* light warm background */
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    /* Centered Clickable Heading */
+    #mainHeading {
+      color: #228B22; /* heading text color */
+      text-align: center;
+      font-size: 48px;
+      cursor: pointer;
+      margin-top: 20vh; /* push heading down from the top */
+    }
+    /* Slider Container: hidden until heading is clicked */
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      border: 1px solid #8B4513; /* brown */
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      display: none; /* hidden until heading is clicked */
+    }
+    /* Individual Slides */
+    .slide {
+      display: none;
+      background-color: #DFFF00; /* bright light green-yellow */
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+    }
+    .active-slide {
+      display: block;
+    }
+    /* Slide Titles & Content */
+    .slide-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #8B4513; /* brown */
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+    .slide-content {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #556B2F; /* olive green */
+    }
+    /* Magnifying Glass Icon Link */
+    .magnify-icon {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin-left: 10px;
+      background-color: #ccc; /* gray background */
+      border-radius: 50%;
+      text-align: center;
+      line-height: 24px;
+      font-size: 14px;
+      text-decoration: none;
+      color: #333; /* icon color */
+    }
+    .magnify-icon:hover {
+      background-color: #aaa; /* darker gray on hover */
+    }
+    /* Navigation Buttons */
+    .nav-buttons {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .nav-button {
+      display: inline-block;
+      background-color: #ccc; /* gray */
+      color: #333;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .nav-button:hover {
+      background-color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <!-- Clickable Heading -->
+  <h1 id="mainHeading">Embodiment, Experience, and Transformation</h1>
+
+  <!-- Slider Container -->
+  <div class="container" id="sliderContainer">
+    <!-- Slide 1: Independent Pilot Survey -->
+    <div class="slide active-slide">
+      <div class="slide-title">
+        Independent Pilot Survey on Food Security during the Covid-19 Pandemic (2022)
+        <a href="https://doi.org/10.1108/JITLP-04-2023-0020" class="magnify-icon" target="_blank" title="View details">🔍</a>
+      </div>
+      <div class="slide-content">
+        In this study, I interviewed fifty women across rural and periurban districts in West Bengal to explore the intersections of food security and gender vulnerability during the pandemic. The research revealed that while women are central to household and community food security, they also face heightened vulnerability due to limited financial autonomy and entrenched gender roles. Employing participatory methods and a feminist IR framework, this project deepened my understanding of the political economy of marginalization and informed policy-oriented discussions on addressing intersecting socio-economic disparities.
+      </div>
+    </div>
+
+    <!-- Slide 2: Sonagachi Project -->
+    <div class="slide">
+      <div class="slide-title">
+        Project Assistant – Sonagachi in Perspective: A Socio-Medico-Legal Study (2022–2023)
+        <a href="https://www.newindianexpress.com/nation/2024/Mar/24/address-plight-of-sonagachhi-sex-workers-in-six-weeks-nhrc-tells-west-bengal-government" 
+           class="magnify-icon" 
+           target="_blank" 
+           title="View details">🔍</a>
+      </div>
+      <div class="slide-content">
+        This study involved extensive fieldwork among sex workers in Sonagachi—a setting characterized by both direct violence and systemic inequities. I examined how women navigate exploitative conditions, state policies, and structural challenges shaped by neoliberal globalization. Through large-scale surveys, qualitative interviews, and collaboration with local NGOs, I linked individual experiences to broader processes of economic and social injustice, generating policy recommendations for targeted interventions. This project exemplifies my commitment to participatory, intersectional research that foregrounds the lived realities of vulnerable women.
+      </div>
+    </div>
+
+    <!-- Slide 3: Research Assistant (Conditional Cash Transfer) -->
+    <div class="slide">
+      <div class="slide-title">
+        Research Assistant – Empowerment, Education and Welfare: Exploring the Consequences of Conditional Cash Transfer Programmes in India (2023–2024)
+      </div>
+      <div class="slide-content">
+        In this project, I interviewed adolescent and young adult girls to understand how conditional cash transfers connect to female empowerment. I explored how empowerment is a dynamic and subjective process—mediated by traditional gender norms, caste, class, religion, and regional factors—challenging the simplistic neoliberal assumption that money alone can drive change. By designing surveys, conducting in-depth literature reviews, and analyzing policy impacts, I emphasized intersubjectivity, reflexivity, and context. This work informed policy recommendations to improve programme effectiveness, reinforcing my commitment to feminist methodologies.
+      </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+      <button class="nav-button" id="prevBtn">&larr; Prev</button>
+      <button class="nav-button" id="nextBtn">Next &rarr;</button>
+    </div>
+  </div>
+
+  <script>
+    const heading = document.getElementById('mainHeading');
+    const sliderContainer = document.getElementById('sliderContainer');
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+
+    // Show the slider when heading is clicked, hide the heading
+    heading.addEventListener('click', function() {
+      heading.style.display = 'none';
+      sliderContainer.style.display = 'block';
+      showSlide(currentSlide);
+    });
+
+    // Prev Button
+    prevBtn.addEventListener('click', function() {
+      currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
+      showSlide(currentSlide);
+    });
+
+    // Next Button
+    nextBtn.addEventListener('click', function() {
+      currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
+      showSlide(currentSlide);
+    });
+
+    // Display the slide at the given index
+    // Hide the Next button if on final slide
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active-slide');
+        if (i === index) {
+          slide.classList.add('active-slide');
+        }
+      });
+      if (currentSlide === slides.length - 1) {
+        nextBtn.style.display = 'none';
+      } else {
+        nextBtn.style.display = 'inline-block';
+      }
+    }
+  </script>
+</body>
+</html>
