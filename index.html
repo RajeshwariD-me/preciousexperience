@@ -56,24 +56,21 @@
       line-height: 1.6;
       color: #556B2F; /* olive green */
     }
-    /* Magnifying Glass Icon with Rainbow Gradient */
+    /* Magnifying Glass Icon with Descending Night Gradient */
     .magnify-icon {
       display: inline-block;
-      width: 30px; /* increased size */
-      height: 30px;
+      width: 36px;  /* increased size */
+      height: 36px;
       margin-left: 10px;
-      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      background: linear-gradient(90deg, #C4F2CE, #7BEDD3, #53D5D7, #00A5E1, #2D58BD, #3D388F);
       border-radius: 50%;
       text-align: center;
-      line-height: 30px;
-      font-size: 18px; /* increased font size */
+      line-height: 36px;
+      font-size: 20px;  /* increased font size */
       text-decoration: none;
       color: #fff;
       cursor: pointer;
       transition: transform 0.2s ease-in-out;
-    }
-    .magnify-icon:hover {
-      opacity: 0.9;
     }
     /* Shake animation keyframes */
     @keyframes shake {
@@ -83,8 +80,14 @@
       75% { transform: translateX(-3px); }
       100% { transform: translateX(0); }
     }
-    .shake {
-      animation: shake 0.5s;
+    /* On hover, continuously shake unless disabled */
+    .magnify-icon:hover {
+      animation: shake 0.5s infinite;
+    }
+    /* When clicked, disable hover shaking */
+    .magnify-icon.no-shake,
+    .magnify-icon.no-shake:hover {
+      animation: none !important;
     }
     /* Navigation Buttons */
     .nav-buttons {
@@ -120,7 +123,7 @@
         <a href="https://doi.org/10.1108/JITLP-04-2023-0020" class="magnify-icon" target="_blank" title="View details">🔍</a>
       </div>
       <div class="slide-content">
-        In this study, I interviewed fifty women across rural and periurban districts in West Bengal to explore the intersections of food security and gender vulnerability during the pandemic. The research revealed that while women are central to household and community food security, they also face heightened vulnerability due to limited financial autonomy and entrenched gender roles. Employing participatory methods and a feminist framework, this project deepened my understanding of the political economy of marginalisation and informed policy-oriented discussions on addressing intersecting socio-economic disparities.
+        In this study, I interviewed fifty women across rural and periurban areas in West Bengal to explore the intersections of food insecurity and gender inequality during the pandemic. The research revealed that while women are central to securing household and community food security, they also eat less, least, and last due to limited household bargaining power, care burdens, and entrenched gender roles. Employing participatory methods and a feminist framework, this project deepened my understanding of the political economy of marginalisation and informed policy-oriented discussions on addressing intersecting socio-economic disparities.
       </div>
     </div>
 
@@ -131,7 +134,7 @@
         <a href="https://www.newindianexpress.com/nation/2024/Mar/24/address-plight-of-sonagachhi-sex-workers-in-six-weeks-nhrc-tells-west-bengal-government" class="magnify-icon" target="_blank" title="View details">🔍</a>
       </div>
       <div class="slide-content">
-        This study involved extensive fieldwork among sex workers in Sonagachi—a setting characterised by both direct violence and systemic inequities. I examined how women navigate exploitative conditions, state policies, social ostracisation, and structural challenges shaped by neoliberal globalisation. Through large-scale surveys, qualitative interviews, and collaboration with local NGOs, I linked individual experiences to broader processes of economic and social injustice, generating policy recommendations for targeted interventions. This project exemplifies my commitment to participatory, intersectional research that foregrounds the lived realities of vulnerable women.
+        This study involved extensive fieldwork among sex workers in Sonagachi—a setting characterised by both direct violence and systemic inequities. We examined how women navigate exploitative conditions, state policies, social ostracism, and structural challenges shaped by patriarchy and globalisation. Through large-scale surveys, qualitative interviews, and collaboration with local NGOs, we linked individual experiences to broader processes of economic and social injustice, generating policy recommendations for targeted interventions. This project reinforced my commitment to participatory, intersectional research that foregrounds the lived realities of vulnerable women.
       </div>
     </div>
 
@@ -141,7 +144,7 @@
         Research Assistant – Empowerment, Education and Welfare: Exploring the Consequences of Conditional Cash Transfer Programmes in India (2023–2024)
       </div>
       <div class="slide-content">
-        In this project, I interviewed adolescent and young adult girls to understand how conditional cash transfers connect to female empowerment. I explored how empowerment is a dynamic and subjective process—mediated by traditional gender norms, caste, class, religion, and regional factors—challenging the straightforward assumption that money alone can drive change. By designing surveys, conducting in-depth literature reviews, and analysing policy impacts, I emphasised intersubjectivity, reflexivity, and positionality. This work informed policy recommendations to improve programme effectiveness and reinforced my commitment to feminist methodologies.
+        In this project, we interviewed adolescent and young adult girls to understand how conditional cash transfers connect to female empowerment. We explored how empowerment is a dynamic and subjective process—mediated by traditional gender norms, caste, class, religion, and regional factors—challenging the straightforward assumption that money alone can drive change. By designing surveys, conducting in-depth literature reviews, and analysing policy impacts, we emphasised intersubjectivity, reflexivity, and positionality. This work informed policy recommendations to improve programme effectiveness and reinforced my commitment to gender justice and empowerment as guiding principles.
       </div>
     </div>
 
@@ -194,13 +197,10 @@
       }
     }
 
-    // Add shake animation to magnify icons on click
+    // For each magnify icon, disable hover shaking after it is clicked
     document.querySelectorAll('.magnify-icon').forEach(function(icon) {
       icon.addEventListener('click', function() {
-        icon.classList.add('shake');
-        icon.addEventListener('animationend', function() {
-          icon.classList.remove('shake');
-        }, { once: true });
+        icon.classList.add('no-shake');
       });
     });
   </script>
