@@ -13,13 +13,13 @@
       padding: 0;
       color: #333;
     }
-    /* Centered Clickable Heading */
+    /* Clickable Heading */
     #mainHeading {
       color: #228B22; /* heading text color */
       text-align: center;
-      font-size: 48px;
+      font-size: 48px; /* larger font */
       cursor: pointer;
-      margin-top: 20vh; /* push heading down from the top */
+      margin-top: 20vh; /* roughly center vertically */
     }
     /* Slider Container: hidden until heading is clicked */
     .container {
@@ -29,12 +29,12 @@
       border: 1px solid #8B4513; /* brown */
       background-color: #fff;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      display: none; /* hidden until heading is clicked */
+      display: none;
     }
     /* Individual Slides */
     .slide {
       display: none;
-      background-color: #DFFF00; /* bright light green-yellow */
+      background-color: #DFFF00; /* light green-yellow */
       padding: 20px;
       margin-bottom: 20px;
       border-radius: 4px;
@@ -42,7 +42,7 @@
     .active-slide {
       display: block;
     }
-    /* Slide Titles & Content */
+    /* Slide Title & Content */
     .slide-title {
       font-size: 20px;
       font-weight: bold;
@@ -56,22 +56,35 @@
       line-height: 1.6;
       color: #556B2F; /* olive green */
     }
-    /* Magnifying Glass Icon Link */
+    /* Magnifying Glass Icon with Rainbow Gradient */
     .magnify-icon {
       display: inline-block;
-      width: 24px;
-      height: 24px;
+      width: 30px; /* increased size */
+      height: 30px;
       margin-left: 10px;
-      background-color: #ccc; /* gray background */
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
       border-radius: 50%;
       text-align: center;
-      line-height: 24px;
-      font-size: 14px;
+      line-height: 30px;
+      font-size: 18px; /* increased font size */
       text-decoration: none;
-      color: #333; /* icon color */
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
     }
     .magnify-icon:hover {
-      background-color: #aaa; /* darker gray on hover */
+      opacity: 0.9;
+    }
+    /* Shake animation keyframes */
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-3px); }
+      50% { transform: translateX(3px); }
+      75% { transform: translateX(-3px); }
+      100% { transform: translateX(0); }
+    }
+    .shake {
+      animation: shake 0.5s;
     }
     /* Navigation Buttons */
     .nav-buttons {
@@ -107,7 +120,7 @@
         <a href="https://doi.org/10.1108/JITLP-04-2023-0020" class="magnify-icon" target="_blank" title="View details">🔍</a>
       </div>
       <div class="slide-content">
-        In this study, I interviewed fifty women across rural and periurban districts in West Bengal to explore the intersections of food security and gender vulnerability during the pandemic. The research revealed that while women are central to household and community food security, they also face heightened vulnerability due to limited financial autonomy and entrenched gender roles. Employing participatory methods and a feminist IR framework, this project deepened my understanding of the political economy of marginalization and informed policy-oriented discussions on addressing intersecting socio-economic disparities.
+        In this study, I interviewed fifty women across rural and periurban districts in West Bengal to explore the intersections of food security and gender vulnerability during the pandemic. The research revealed that while women are central to household and community food security, they also face heightened vulnerability due to limited financial autonomy and entrenched gender roles. Employing participatory methods and a feminist framework, this project deepened my understanding of the political economy of marginalisation and informed policy-oriented discussions on addressing intersecting socio-economic disparities.
       </div>
     </div>
 
@@ -115,23 +128,20 @@
     <div class="slide">
       <div class="slide-title">
         Project Assistant – Sonagachi in Perspective: A Socio-Medico-Legal Study (2022–2023)
-        <a href="https://www.newindianexpress.com/nation/2024/Mar/24/address-plight-of-sonagachhi-sex-workers-in-six-weeks-nhrc-tells-west-bengal-government" 
-           class="magnify-icon" 
-           target="_blank" 
-           title="View details">🔍</a>
+        <a href="https://www.newindianexpress.com/nation/2024/Mar/24/address-plight-of-sonagachhi-sex-workers-in-six-weeks-nhrc-tells-west-bengal-government" class="magnify-icon" target="_blank" title="View details">🔍</a>
       </div>
       <div class="slide-content">
-        This study involved extensive fieldwork among sex workers in Sonagachi—a setting characterized by both direct violence and systemic inequities. I examined how women navigate exploitative conditions, state policies, and structural challenges shaped by neoliberal globalization. Through large-scale surveys, qualitative interviews, and collaboration with local NGOs, I linked individual experiences to broader processes of economic and social injustice, generating policy recommendations for targeted interventions. This project exemplifies my commitment to participatory, intersectional research that foregrounds the lived realities of vulnerable women.
+        This study involved extensive fieldwork among sex workers in Sonagachi—a setting characterised by both direct violence and systemic inequities. I examined how women navigate exploitative conditions, state policies, social ostracisation, and structural challenges shaped by neoliberal globalisation. Through large-scale surveys, qualitative interviews, and collaboration with local NGOs, I linked individual experiences to broader processes of economic and social injustice, generating policy recommendations for targeted interventions. This project exemplifies my commitment to participatory, intersectional research that foregrounds the lived realities of vulnerable women.
       </div>
     </div>
 
-    <!-- Slide 3: Research Assistant (Conditional Cash Transfer) -->
+    <!-- Slide 3: Research Assistant (Conditional Cash Transfer Project) -->
     <div class="slide">
       <div class="slide-title">
         Research Assistant – Empowerment, Education and Welfare: Exploring the Consequences of Conditional Cash Transfer Programmes in India (2023–2024)
       </div>
       <div class="slide-content">
-        In this project, I interviewed adolescent and young adult girls to understand how conditional cash transfers connect to female empowerment. I explored how empowerment is a dynamic and subjective process—mediated by traditional gender norms, caste, class, religion, and regional factors—challenging the simplistic neoliberal assumption that money alone can drive change. By designing surveys, conducting in-depth literature reviews, and analyzing policy impacts, I emphasized intersubjectivity, reflexivity, and context. This work informed policy recommendations to improve programme effectiveness, reinforcing my commitment to feminist methodologies.
+        In this project, I interviewed adolescent and young adult girls to understand how conditional cash transfers connect to female empowerment. I explored how empowerment is a dynamic and subjective process—mediated by traditional gender norms, caste, class, religion, and regional factors—challenging the straightforward assumption that money alone can drive change. By designing surveys, conducting in-depth literature reviews, and analysing policy impacts, I emphasised intersubjectivity, reflexivity, and positionality. This work informed policy recommendations to improve programme effectiveness and reinforced my commitment to feminist methodologies.
       </div>
     </div>
 
@@ -150,27 +160,26 @@
     const nextBtn = document.getElementById('nextBtn');
     const prevBtn = document.getElementById('prevBtn');
 
-    // Show the slider when heading is clicked, hide the heading
+    // When heading is clicked, hide the heading and show the slider container
     heading.addEventListener('click', function() {
       heading.style.display = 'none';
       sliderContainer.style.display = 'block';
       showSlide(currentSlide);
     });
 
-    // Prev Button
+    // Navigation for Previous Button
     prevBtn.addEventListener('click', function() {
       currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
       showSlide(currentSlide);
     });
 
-    // Next Button
+    // Navigation for Next Button
     nextBtn.addEventListener('click', function() {
       currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
       showSlide(currentSlide);
     });
 
-    // Display the slide at the given index
-    // Hide the Next button if on final slide
+    // Display slide at given index; hide Next button on final slide
     function showSlide(index) {
       slides.forEach((slide, i) => {
         slide.classList.remove('active-slide');
@@ -184,6 +193,16 @@
         nextBtn.style.display = 'inline-block';
       }
     }
+
+    // Add shake animation to magnify icons on click
+    document.querySelectorAll('.magnify-icon').forEach(function(icon) {
+      icon.addEventListener('click', function() {
+        icon.classList.add('shake');
+        icon.addEventListener('animationend', function() {
+          icon.classList.remove('shake');
+        }, { once: true });
+      });
+    });
   </script>
 </body>
 </html>
